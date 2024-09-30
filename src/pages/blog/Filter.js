@@ -16,7 +16,7 @@ export default function useFilter () {
 
     const getList = async () => {
         try {
-            const res = await axios.get("http://localhost:3000/posts");
+            const res = await axios.get("REACT_APP_API_URL/posts");
             setData(res.data);
             console.log(res.data)
         } catch (error) {

@@ -9,7 +9,7 @@ export default function Login() {
     const {setCurrentUser} = useContext(MyContext);
 
     const handlelogin = (values) => {
-        axios.post("http://localhost:3000/login", values)
+        axios.post("REACT_APP_API_URL/login", values)
             .then((res) => {
                 alert('Đăng nhập thành công');
                 setCurrentUser(res.data);

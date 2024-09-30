@@ -18,7 +18,7 @@ export default function EditBlog() {
 
     useEffect(() => {
         if (idUpdate) {
-            axios.get(`http://localhost:3000/posts/${idUpdate}`)
+            axios.get(`REACT_APP_API_URL/posts/${idUpdate}`)
                 .then((res) => {
                     const data = res.data;
                     console.log("API Response: ", res.data);
@@ -41,7 +41,7 @@ export default function EditBlog() {
                     values.imgPost = await handleImageUpload(values.imgPost); // Upload and get image URL for post image
                     console.log("Post Image URL:", values.imgPost);
                 }
-                await axios.put(`http://localhost:3000/posts/${idUpdate}`, values)
+                await axios.put(`REACT_APP_API_URL/posts/${idUpdate}`, values)
                 alert("Blog updated successfully");
                 navigate("/home");
             } catch (error) {

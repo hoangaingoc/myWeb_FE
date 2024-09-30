@@ -18,7 +18,7 @@ export default function Info() {
     useEffect(() => {
         const fetchUserDetails = async () => {
             try {
-                const res = await axios.get(`http://localhost:3000/users/${username}`);
+                const res = await axios.get(`REACT_APP_API_URL/users/${username}`);
                 setInfo(res.data); // Cập nhật state với dữ liệu user
             } catch (err) {
                 console.error("Error fetching user details:", err);
@@ -34,7 +34,7 @@ export default function Info() {
             if (values.image) {
                 values.image = await handleImageUpload(values.image); // Upload và lấy URL ảnh
             }
-            await axios.put(`http://localhost:3000/users/${username}`, values);
+            await axios.put(`REACT_APP_API_URL/users/${username}`, values);
             alert("Cập nhật thành công!");
 
             setCurrentUser((prevUser) => ({
@@ -46,7 +46,7 @@ export default function Info() {
             }));
 
             // Fetch lại thông tin user để cập nhật giao diện sau khi chỉnh sửa
-            const res = await axios.get(`http://localhost:3000/users/${username}`);
+            const res = await axios.get(`http://REACT_APP_API_URL/users/${username}`);
             setInfo(res.data); // Cập nhật state với dữ liệu user mới
 
             // Sau khi cập nhật thành công, đặt lại các trạng thái chỉnh sửa về false

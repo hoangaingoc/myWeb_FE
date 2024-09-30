@@ -13,7 +13,7 @@ export default function Register() {
                 values.image = await handleImageUpload(values.image); // Upload and get image URL
                 console.log(values.image);
             }
-            await axios.post("http://localhost:3000/register", values);
+            await axios.post("REACT_APP_API_URL/register", values);
             alert('Đăng ký thành công');
             navigate('/login');
         } catch (e) {

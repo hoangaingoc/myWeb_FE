@@ -19,7 +19,7 @@ export default function EditUser({ info }) {
 
     useEffect(() => {
         if (username) {
-            axios.get(`http://localhost:3000/users/${username}`)
+            axios.get(`REACT_APP_API_URL/users/${username}`)
                 .then((res) => {
                     const data = res.data;
                     console.log("API Response: ", res.data);
@@ -41,7 +41,7 @@ export default function EditUser({ info }) {
                     values.image = await handleImageUpload(values.image); // Upload and get image URL for post image
                     console.log("Post Image URL:", values.image);
                 }
-                await axios.put(`http://localhost:3000/users/${username}`, values)
+                await axios.put(`REACT_APP_API_URL/users/${username}`, values)
                 alert("Update successfully");
                 navigate("/info");
             } catch (error) {
