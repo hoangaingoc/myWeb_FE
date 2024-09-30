@@ -46,7 +46,7 @@ const Like = ({ postId,username }) => { // Destructure postId from props
             return; // Don't proceed if the user is not logged in
         }
 
-        const apiUrl = liked ? `REACT_APP_API_URL/posts/${postId}/unlike` : `REACT_APP_API_URL/posts/${postId}/like`;
+        const apiUrl = liked ? `${process.env.REACT_APP_API_URL}/posts/${postId}/unlike` : `${process.env.REACT_APP_API_URL}/posts/${postId}/like`;
 
         try {
             const response = await fetch(apiUrl, {

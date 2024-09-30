@@ -17,12 +17,12 @@ export default function DetailBlog() {
         // Fetch blog details
         const fetchBlogDetails = async () => {
             try {
-                const res = await axios.get(`REACT_APP_API_URL/posts/${id}`);
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/posts/${id}`);
                 setBlogs(res.data);  // Update state with blog data
 
                 if (res.data.username) {
                     // Fetch user avatar based on blog's username
-                    const userRes = await axios.get(`REACT_APP_API_URL/users/${res.data.username}`);
+                    const userRes = await axios.get(`${process.env.REACT_APP_API_URL}/users/${res.data.username}`);
                     setAvatar(userRes.data.image);  // Update state with user's avatar
                 }
             } catch (err) {

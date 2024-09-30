@@ -13,7 +13,7 @@ const ForgotPassword = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('REACT_APP_API_URL/forgot-password', { username }); // Gửi yêu cầu POST tới API
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/forgot-password`, { username }); // Gửi yêu cầu POST tới API
             alert('Reset mật khẩu thành công, mật khẩu mới của bạn: 123456');
             navigate('/login');
         } catch (error) {

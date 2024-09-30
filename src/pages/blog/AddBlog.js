@@ -19,7 +19,7 @@ export default function AddBlog() {
                 values.imgPost = await handleImageUpload(values.imgPost); // Upload and get image URL for post image
                 console.log("Post Image URL:", values.imgPost);
             }
-            await axios.post("REACT_APP_API_URL/posts", values);
+            await axios.post(`${process.env.REACT_APP_API_URL}/posts`, values);
 
             alert("Blog added successfully");
             navigate("/home");
