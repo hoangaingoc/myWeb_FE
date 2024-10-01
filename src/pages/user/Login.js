@@ -9,12 +9,14 @@ export default function Login() {
     const {setCurrentUser} = useContext(MyContext);
 
     const handlelogin = (values) => {
-        axios.post(`${process.env.REACT_APP_API_URL}/login`, values)
+        axios.post(`https://myweb-zk5h.onrender.com/login`, values)
             .then((res) => {
                 alert('Đăng nhập thành công');
                 setCurrentUser(res.data);
 
                 console.log(res.data)
+                console.log(`${process.env.REACT_APP_API_URL}/login`)
+
 
                 localStorage.setItem("currentUser", JSON.stringify(res.data));
                 navigate('/home');
