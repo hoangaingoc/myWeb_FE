@@ -8,16 +8,17 @@ import Like from "../like/Like";
 export default function DetailBlog() {
     const [blogs, setBlogs] = useState(null);
     const [avatar, setAvatar] = useState(null); // State to store the avatar
-    const { id } = useParams();  // Get the blog ID from URL
+    const { idPost } = useParams();  // Get the blog ID from URL
     const { currentUser } = useContext(MyContext);  // Get current user from context
     const username = currentUser?.data?.username || "Guest";  // Fallback to "Guest" if no username
-
+ console.log(idPost)
     useEffect(() => {
         // Fetch blog details
         const fetchBlogDetails = async () => {
             try {
-                const res = await axios.get(`https://myweb-zk5h.onrender.com/posts/${id}`);
+                const res = await axios.get(`https://myweb-zk5h.onrender.com/posts/${idPost}`);
                 setBlogs(res.data);  // Update state with blog data
+                console.log(res.data)
 
                 if (res.data.username) {
                     // Fetch user avatar based on blog's username
