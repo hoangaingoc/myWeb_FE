@@ -62,7 +62,7 @@ export default function DetailBlog() {
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <Like
-                        postId={blogs.id}
+                        postId={blogs.idPost}
                         username={username}  // Pass the username to the Like component
                         initialLikes={blogs.likeCount || 0}
                         initialLiked={blogs.userLiked || false}
@@ -77,12 +77,12 @@ export default function DetailBlog() {
                         {isUserBlog && (
                             <>
                                 {/* Edit button with icon */}
-                                <Link to={`/home/edit/${blogs.id}`} style={{ marginRight: '10px' }}>
+                                <Link to={`/home/edit/${blogs.idPost}`} style={{ marginRight: '10px' }}>
                                     <i className="fas fa-edit" style={{ marginRight: '5px' }}></i>
                                 </Link>
 
                                 {/* Delete button with icon */}
-                                <DeleteBlog postId={blogs.id} onDeleteSuccess={handleDeleteSuccess} />
+                                <DeleteBlog postId={blogs.idPost} onDeleteSuccess={handleDeleteSuccess} />
                             </>
                         )}
                     </div>
