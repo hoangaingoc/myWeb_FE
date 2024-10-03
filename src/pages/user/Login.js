@@ -14,10 +14,6 @@ export default function Login() {
                 alert('Đăng nhập thành công');
                 setCurrentUser(res.data);
 
-                console.log(res.data)
-                console.log(`${process.env.REACT_APP_API_URL}/login`)
-
-
                 localStorage.setItem("currentUser", JSON.stringify(res.data));
                 navigate('/home');
             }).catch(e => {

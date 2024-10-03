@@ -12,7 +12,7 @@ export default function FeaturedBlog() {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/posts`);
+                const response = await axios.get(`https://myweb-zk5h.onrender.com/posts`);
                 if (response.data.length > 0) {
                     setPosts(response.data);
                     console.log(response.data);

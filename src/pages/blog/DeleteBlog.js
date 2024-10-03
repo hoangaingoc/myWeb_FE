@@ -6,7 +6,7 @@ const DeleteBlog = ({ postId, onDeleteSuccess }) => {
         const isConfirm = window.confirm("Are you sure you want to delete this blog?");
         if (isConfirm) {
             try {
-                await axios.delete(`${process.env.REACT_APP_API_URL}/posts/${postId}`);
+                await axios.delete(`https://myweb-zk5h.onrender.com/posts/${postId}`);
                 alert("Blog deleted successfully.");
                 onDeleteSuccess(); // Call the function to handle successful deletion
             } catch (err) {

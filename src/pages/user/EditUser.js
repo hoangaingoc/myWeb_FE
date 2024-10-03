@@ -19,7 +19,7 @@ export default function EditUser({ info }) {
 
     useEffect(() => {
         if (username) {
-            axios.get(`${process.env.REACT_APP_API_URL}/users/${username}`)
+            axios.get(`https://myweb-zk5h.onrender.com/users/${username}`)
                 .then((res) => {
                     const data = res.data;
                     console.log("API Response: ", res.data);
@@ -41,7 +41,7 @@ export default function EditUser({ info }) {
                     values.image = await handleImageUpload(values.image); // Upload and get image URL for post image
                     console.log("Post Image URL:", values.image);
                 }
-                await axios.put(`${process.env.REACT_APP_API_URL}/users/${username}`, values)
+                await axios.put(`https://myweb-zk5h.onrender.com/users/${username}`, values)
                 alert("Update successfully");
                 navigate("/info");
             } catch (error) {

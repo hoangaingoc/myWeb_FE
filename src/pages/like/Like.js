@@ -13,7 +13,7 @@ const Like = ({ postId,username }) => { // Destructure postId from props
         const fetchLikeData = async () => {
             try {
                 // Gọi API GET để lấy danh sách những người đã like bài viết
-                const response = await fetch(`REACT_APP_API_URL/posts/${postId}/likes`);
+                const response = await fetch(`https://myweb-zk5h.onrender.com/posts/${postId}/likes`);
 
                 // Kiểm tra trạng thái phản hồi của API
                 console.log('API Response Status:', response.status);
@@ -46,7 +46,7 @@ const Like = ({ postId,username }) => { // Destructure postId from props
             return; // Don't proceed if the user is not logged in
         }
 
-        const apiUrl = liked ? `${process.env.REACT_APP_API_URL}/posts/${postId}/unlike` : `${process.env.REACT_APP_API_URL}/posts/${postId}/like`;
+        const apiUrl = liked ? `https://myweb-zk5h.onrender.com/posts/${postId}/unlike` : `https://myweb-zk5h.onrender.com/posts/${postId}/like`;
 
         try {
             const response = await fetch(apiUrl, {

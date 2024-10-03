@@ -29,7 +29,7 @@ export default function ListBlog() {
         const fetchAvatars = async () => {
             const usernames = filteredBlogs.map(blog => blog.username);
             const avatarPromises = usernames.map(username =>
-                axios.get(`${process.env.REACT_APP_API_URL}/users/${username}`).then(res => ({ [username]: res.data.image }))
+                axios.get(`https://myweb-zk5h.onrender.com/users/${username}`).then(res => ({ [username]: res.data.image }))
             );
             const avatarResults = await Promise.all(avatarPromises);
             const avatarMap = Object.assign({}, ...avatarResults);

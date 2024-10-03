@@ -13,7 +13,7 @@ export default function Register() {
                 values.image = await handleImageUpload(values.image); // Upload and get image URL
                 console.log(values.image);
             }
-            await axios.post(`${process.env.REACT_APP_API_URL}/register`, values);
+            await axios.post(`https://myweb-zk5h.onrender.com/register`, values);
             alert('Đăng ký thành công');
             navigate('/login');
         } catch (e) {
