@@ -3,7 +3,6 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import { MyContext } from "../../MyContext";
 import DeleteBlog from "./DeleteBlog";
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import Like from "../like/Like";
 
 export default function DetailBlog() {
