@@ -14,7 +14,7 @@ export default function EditBlog() {
 
     const params = useParams();
     const navigate = useNavigate();
-    const idUpdate = params.id;
+    const idUpdate = params.idPost;
 
     useEffect(() => {
         if (idUpdate) {
